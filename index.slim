@@ -45,7 +45,7 @@ hr
       .tab-content
         #macosx.tab-pane.active
           pre brew install tmate
-          p Note: <a href="http://brew.sh/">Homebrew</a> is required as a prerequisite.
+          p Note: <a href="https://brew.sh/">Homebrew</a> is required as a prerequisite.
         #ubuntu.tab-pane
           p We provide a PPA with builds for Ubuntu 14.04 and up.
           pre sudo apt-get install software-properties-common && \
@@ -81,7 +81,7 @@ hr
 
     <div class="social-buttons">
       <div class="github">
-        <iframe src="http://tmate.io/github-btn.html?user=tmate-io&repo=tmate&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+        <iframe src="https://tmate.io/github-btn.html?user=tmate-io&repo=tmate&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
       </div>
 
     </div>
@@ -108,7 +108,7 @@ hr
   .span12
     h2 Running tmate as a daemon
 
-    p You can run tmate detached, and retrieve the SSH connection strings as follow:
+    p You can run tmate detached, and retrieve the SSH connection strings as follows:
 
     pre tmate -S /tmp/tmate.sock new-session -d               # Launch tmate in a detached state
         tmate -S /tmp/tmate.sock wait tmate-ready             # Blocks until the SSH connection is established
@@ -129,7 +129,7 @@ hr
 
     p The server sources are located at <a href="https://github.com/tmate-io/tmate-slave">https://github.com/tmate-io/tmate-slave</a>.
 
-    p You need a Linux distribution as tmate utilizes linux specific features.
+    p You need a Linux distribution as tmate utilizes Linux-specific features.
 
     p tmate also depends on a couple of packages. On Ubuntu, the packages are:<br />
       git-core build-essential pkg-config libtool libevent-dev libncurses-dev zlib1g-dev automake libssh-dev cmake ruby
@@ -173,15 +173,15 @@ hr
     h4 Connection process
 
     p When launching tmate, an ssh connection is established to tmate.io (or your own server) in the
-      background through <a href="http://www.libssh.org/">libssh</a>.
+      background through <a href="https://www.libssh.org/">libssh</a>.
       The server ssh key signatures are specified upfront and are verified
       during the DH exchange to prevent
-      <a href="http://en.wikipedia.org/wiki/Man-in-the-middle_attack">man in the middle attacks</a>.
+      <a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">man in the middle attacks</a>.
       The client is authenticated with local ssh keys.
 
     p When a connection is established, a 150 bits session token is
       generated, then a tmux server is spawned in a jail with no file system, with
-      its own <a href="http://lwn.net/Articles/531114/#series_index">PID namespace</a> to isolate the server from other processes, and no user
+      its own <a href="https://lwn.net/Articles/531114/#series_index">PID namespace</a> to isolate the server from other processes, and no user
       privileges. To allow this, all files required during the tmux server
       execution are opened before getting jailed. These measures are in place to limit
       the usefulness of possible exploits targeting the tmux server. The attacker
@@ -189,7 +189,7 @@ hr
 
     p When a mate connects to tmate.io (or your own server) with the ssh command, the tmux unix
       socket is looked up on the file system. On lookup failures, a random sleep
-      is performed to prevent <a href="http://en.wikipedia.org/wiki/Timing_attack">timing attacks</a>,
+      is performed to prevent <a href="https://en.wikipedia.org/wiki/Timing_attack">timing attacks</a>,
       otherwise a tmux client is spawned and connected to the remote tmux
       server.
 
@@ -204,7 +204,7 @@ hr
     h4 Protocol
 
     p The local and remote tmux servers communicate with a protocol on top of
-      <a href="http://msgpack.org/">msgpack</a>, which is gzipped over ssh for
+      <a href="https://msgpack.org/">msgpack</a>, which is gzipped over ssh for
       network bandwidth efficiency as vim scrolling can generate massive amounts
       of data.
 
@@ -233,7 +233,7 @@ hr
          when you see issues.
 
       li Tolerate network failures. Dealing with reconnections and roaming (IP
-         changes) similarly to what <a href="http://mosh.mit.edu/">Mosh</a> offers.
+         changes) similarly to what <a href="https://mosh.mit.edu/">Mosh</a> offers.
 
       li <del>Support for read-only clients. This would be easy to do by providing
          another session token, distinct from the read-write access one.</del>
